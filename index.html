@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoChallenge - Solve Challenges</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">AlgoChallenge</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('challenges')">Challenges</a></li>
+                <li><a href="#" onclick="showSection('leaderboard')">Leaderboard</a></li>
+                <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="content-section">
+            <h2>Welcome to AlgoChallenge</h2>
+            <p>Enhance your data structures and algorithms skills by solving engaging coding challenges!</p>
+            <button onclick="showSection('challenges')" class="start-btn">Start Solving Challenges</button>
+        </section>
+
+        <!-- Challenges Section -->
+        <section id="challenges" class="content-section" style="display: none;">
+            <h2>Data Structures & Algorithm Challenges</h2>
+            <ul id="questions">
+                <!-- Questions will be populated here by JavaScript -->
+            </ul>
+
+            <div id="question-details">
+                <h3>Question Details</h3>
+                <div id="details">
+                    <p>Select a question to view details.</p>
+                </div>
+
+                <div id="code-area" style="display: none;">
+                    <h3>Write Your Solution</h3>
+                    <label for="language">Choose Language:</label>
+                    <select id="language">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                    </select>
+                    <textarea id="code-input" rows="10" cols="80" placeholder="Write your solution here..."></textarea>
+                    <br>
+                    <button id="run-code" class="run-btn">Run Code</button>
+                    <div id="test-results"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard" class="content-section" style="display: none;">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list">
+                <!-- Ranks will be populated by JavaScript -->
+            </ul>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="content-section" style="display: none;">
+            <h2>User Profile</h2>
+            <div id="profile-info">
+                <!-- User info will be populated dynamically -->
+            </div>
+            <h3>Solved Challenges</h3>
+            <ul id="solved-challenges-list">
+                <!-- Solved questions will be listed here -->
+            </ul>
+        </section>
+
+        <!-- Login/Signup Section -->
+        <section id="login" class="content-section" style="display: none;">
+            <h2>Login or Sign Up</h2>
+            <form id="auth-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit" id="login-btn">Login</button>
+                <button type="button" id="signup-btn">Sign Up</button>
+                <div id="auth-message"></div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AlgoChallenge. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
