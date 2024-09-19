@@ -7,14 +7,14 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1c1c1c; /* Dark background for sleek look */
-    color: #e0e0e0; /* Softer off-white text */
+    background-color: #1c1c1c;
+    color: #e0e0e0;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header styling */
 header {
-    background: linear-gradient(90deg, #282828, #3a3a3a); /* Soft gradient */
+    background: linear-gradient(90deg, #282828, #3a3a3a);
     color: #e0e0e0;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -45,7 +45,7 @@ header nav {
 }
 
 .nav-links a:hover {
-    color: #64ffda; /* Soft cyan hover color */
+    color: #64ffda;
 }
 
 .nav-links a::after {
@@ -76,7 +76,7 @@ main {
 /* Home Section */
 #home {
     text-align: center;
-    background: linear-gradient(45deg, #252525, #2d2d2d); /* Subtle gradient */
+    background: linear-gradient(45deg, #252525, #2d2d2d);
     color: #e0e0e0;
     border-radius: 10px;
     padding: 30px;
@@ -109,14 +109,14 @@ main {
 }
 
 .start-btn:hover {
-    background-color: #52e0bf; /* Slightly darker on hover */
+    background-color: #52e0bf;
     transform: translateY(-4px);
 }
 
 /* Content sections */
 .content-section {
     margin: 20px 0;
-    background-color: #2b2b2b; /* Slightly lighter background */
+    background-color: #2b2b2b;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
@@ -163,6 +163,44 @@ h2::after {
     transform: translateY(-3px);
 }
 
+/* Tabs Navigation */
+.tab-nav {
+    margin-top: 20px;
+}
+
+.tab-link {
+    background-color: #333333;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.tab-link:hover {
+    background-color: #3d3d3d;
+}
+
+.tab-link.active {
+    background-color: #64ffda;
+    color: #0d0d0d;
+}
+
+/* Tabs Content */
+.tab-content {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 0 10px 10px 10px;
+    margin-top: -5px;
+}
+
+#code-area {
+    margin-top: 20px;
+}
+
 /* Footer */
 footer {
     background-color: #282828;
@@ -193,7 +231,9 @@ textarea:focus {
 }
 
 /* Button styling */
-.run-btn {
+.run-btn,
+.chatbot-btn,
+.discussion-btn {
     background-color: #64ffda;
     color: #0d0d0d;
     padding: 12px 25px;
@@ -205,11 +245,35 @@ textarea:focus {
     text-transform: uppercase;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 10px;
+    margin-right: 10px;
 }
 
-.run-btn:hover {
+.run-btn:hover,
+.chatbot-btn:hover,
+.discussion-btn:hover {
     background-color: #52e0bf;
     transform: translateY(-3px);
+}
+
+/* Chatbot area */
+#chatbot-area {
+    background-color: #333333;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#chatbot-responses {
+    color: #e0e0e0;
+}
+
+pre {
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-top: 10px;
+    color: #e0e0e0;
 }
 
 /* Auth Form */
@@ -265,7 +329,7 @@ form button:hover {
 
 #auth-message {
     margin-top: 15px;
-    color: #ff5252; /* Subtle red for error messages */
+    color: #ff5252;
 }
 
 /* Animations */

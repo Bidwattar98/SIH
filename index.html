@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlgoChallenge - Solve Challenges</title>
+    <title>Bit By Bit - Solve Challenges</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">AlgoChallenge</div>
+            <div class="logo">Bit By Bit</div>
             <ul class="nav-links">
-                <li><a href="#" onclick="showSection('home')">Home</a></li>
-                <li><a href="#" onclick="showSection('challenges')">Challenges</a></li>
-                <li><a href="#" onclick="showSection('leaderboard')">Leaderboard</a></li>
-                <li><a href="#" onclick="showSection('profile')">Profile</a></li>
-                <li><a href="#" onclick="showSection('login')">Login</a></li>
-                <li><a href="#" onclick="logout()">Logout</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('challenges')">Challenges</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('leaderboard')">Leaderboard</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('profile')">Profile</a></li>
+                <li><a href="javascript:void(0);" onclick="showSection('login')">Login</a></li>
+                <li><a href="javascript:void(0);" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +25,7 @@
     <main>
         <!-- Home Section -->
         <section id="home" class="content-section">
-            <h2>Welcome to AlgoChallenge</h2>
+            <h2>Welcome to Bit By Bit</h2>
             <p>Enhance your data structures and algorithms skills by solving engaging coding challenges!</p>
             <button onclick="showSection('challenges')" class="start-btn">Start Solving Challenges</button>
         </section>
@@ -39,21 +39,58 @@
 
             <div id="question-details">
                 <h3>Question Details</h3>
-                <div id="details">
-                    <p>Select a question to view details.</p>
+
+                <!-- Tabs Navigation -->
+                <div class="tab-nav">
+                    <button class="tab-link active" onclick="openTab('details-tab')">Details</button>
+                    <button class="tab-link" onclick="openTab('hints-tab')">Hints</button>
+                    <button class="tab-link" onclick="openTab('discussion-tab')">Discussion</button>
                 </div>
 
-                <div id="code-area" style="display: none;">
-                    <h3>Write Your Solution</h3>
-                    <label for="language">Choose Language:</label>
-                    <select id="language">
-                        <option value="javascript">JavaScript</option>
-                        <option value="python">Python</option>
-                    </select>
-                    <textarea id="code-input" rows="10" cols="80" placeholder="Write your solution here..."></textarea>
-                    <br>
-                    <button id="run-code" class="run-btn">Run Code</button>
-                    <div id="test-results"></div>
+                <!-- Tabs Content -->
+                <!-- Details Tab -->
+                <div id="details-tab" class="tab-content">
+                    <div id="details">
+                        <p>Select a question to view details.</p>
+                    </div>
+
+                    <div id="code-area" style="display: none;">
+                        <h3>Write Your Solution</h3>
+                        <label for="language">Choose Language:</label>
+                        <select id="language">
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                        </select>
+                        <textarea id="code-input" rows="10" cols="80" placeholder="Write your solution here..."></textarea>
+                        <br>
+                        <button id="run-code" class="run-btn">Run Code</button>
+                        <button id="ask-chatbot" class="chatbot-btn">Ask Koding King</button>
+                        <div id="test-results"></div>
+                        <div id="chatbot-area" style="display: none;">
+                            <h3>Koding King Suggestions</h3>
+                            <div id="chatbot-responses"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hints Tab -->
+                <div id="hints-tab" class="tab-content" style="display: none;">
+                    <div id="hints-content">
+                        <p>Select a question to view hints.</p>
+                    </div>
+                </div>
+
+                <!-- Discussion Tab -->
+                <div id="discussion-tab" class="tab-content" style="display: none;">
+                    <div id="discussion-content">
+                        <div id="discussion-messages">
+                            <p>Select a question to view discussion.</p>
+                        </div>
+                        <div id="discussion-form" style="display: none;">
+                            <textarea id="discussion-input" rows="3" placeholder="Add your comment..."></textarea>
+                            <button onclick="addDiscussion()" class="discussion-btn">Post Comment</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -87,15 +124,16 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" required>
                 <button type="submit" id="login-btn">Login</button>
-                <button type="button" id="signup-btn">Sign Up</button>
+                <button type="button" id="signup-btn" onclick="signUp()">Sign Up</button>
                 <div id="auth-message"></div>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 AlgoChallenge. All rights reserved.</p>
+        <p>&copy; 2024 Bit By Bit. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
